@@ -11,7 +11,5 @@ def find_zoom_window():
 def capture_window(window):
     window.activate()
     time.sleep(0.05)
-    filename = datetime.now().strftime("%Y%m%d_%H%M%S.png")
     screenshot = pag.screenshot(region=(window.left, window.top, window.width, window.height))
-    screenshot.save(filename)
-    return filename
+    return screenshot
