@@ -12,7 +12,6 @@ def find_zoom_window():
         exit()
 
 def capture_window(window):
-    window.activate()
     time.sleep(0.05)
     screenshot = pag.screenshot(region=(window.left, window.top, window.width, window.height))
     return screenshot
