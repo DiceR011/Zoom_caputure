@@ -15,10 +15,16 @@ slack_token = os.getenv("SLACK_TOKEN")
 slack_channel = os.getenv("CHANNEL_ID")
 client = WebClient(token=slack_token)
 
-daily_path = operate_dir.daily_dir()
-dt_now = dt.datetime.now()
-yyyymmdd = dt_now.strftime('%y%m%d')
-zip_daily_path = os.getcwd() + '\\' + 'Zip_Screenshot' + '\\' + yyyymmdd + '.zip'
+# # daily_path = operate_dir.daily_dir()
+# # dt_now = dt.datetime.now()
+# # yyyymmdd = dt_now.strftime('%y%m%d')
+# # zip_daily_path = os.getcwd() + '\\' + 'Zip_Screenshot' + '\\' + yyyymmdd + '.zip'
 
-operate_dir.zip_folder(daily_path, zip_daily_path)
+# operate_dir.zip_folder(daily_path, zip_daily_path)
+
+# トークンが正しいか確認します
+auth_test = client.auth_test()
+bot_user_id = auth_test["user_id"]
+print(f"App's bot user: {bot_user_id}")
+
 
