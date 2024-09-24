@@ -6,6 +6,17 @@ from dotenv import load_dotenv
 from lib import operate_dir
 import datetime as dt
 
+while True:
+    print('今日のフォルダをアップロードしますか？(y/n)')
+    f = input()
+    
+    if f == 'y':
+        break
+    elif f == 'n':
+        exit()
+    else:
+        continue
+
 # デバッグレベルのログを出力
 logging.basicConfig(level=logging.DEBUG)
 
